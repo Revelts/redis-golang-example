@@ -1,5 +1,7 @@
 package request
 
+import "time"
+
 type ReqStaffTask struct {
 	TaskInfo []taskDetailInfo `json:"list_task"`
 }
@@ -15,8 +17,13 @@ type subTaskInfo struct {
 }
 
 type subTaskDetail struct {
-	Started string `json:"started"`
-	End     string `json:"end"`
-	About   string `json:"about"`
-	Status  int    `json:"status"`
+	Started time.Time `json:"started"`
+	End     time.Time `json:"end"`
+	About   string    `json:"about"`
+	Status  string    `json:"status"`
+}
+
+type ReqRedis struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
 }
