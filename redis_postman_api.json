@@ -1,0 +1,487 @@
+{
+  "info": {
+    "_postman_id": "5ad2df37-91e3-481d-b329-fa7ea51add17",
+    "name": "Redis Training",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21665622"
+  },
+  "item": [
+    {
+      "name": "HMSET Create User Task",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"list_task\": [\r\n        {\r\n            \"main_task\": \"LogKar\",\r\n            \"sub_task\": [\r\n                {\r\n                    \"task_title\": \"Training\",\r\n                    \"task_detail\": [\r\n                        {\r\n                            \"started\": \"2022-07-06T11:00:12-00:00\",\r\n                            \"end\": \"2022-07-06T02:00:12-00:00\",\r\n                            \"about\": \"Redis\",\r\n                            \"status\": \"Done\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"main_task\": \"Axios\",\r\n            \"sub_task\": [\r\n                {\r\n                    \"task_title\": \"Training\",\r\n                    \"task_detail\": [\r\n                        {\r\n                            \"started\": \"2022-07-06T11:00:12-00:00\",\r\n                            \"end\": \"2022-07-06T02:00:12-00:00\",\r\n                            \"about\": \"Redis Test\",\r\n                            \"status\": \"Done\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"main_task\": \"Dancow\",\r\n            \"sub_task\": [\r\n                {\r\n                    \"task_title\": \"Milking\",\r\n                    \"task_detail\": [\r\n                        {\r\n                            \"started\": \"2022-07-06T11:00:12-00:00\",\r\n                            \"end\": \"2022-07-06T02:00:12-00:00\",\r\n                            \"about\": \"Milking Cow\",\r\n                            \"status\": \"Not Done\"\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/redis/createTask?staffName=Leynardo&ttl_minutes=10",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "redis",
+            "createTask"
+          ],
+          "query": [
+            {
+              "key": "staffName",
+              "value": "Leynardo"
+            },
+            {
+              "key": "ttl_minutes",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Creating Task For Given User",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"list_task\": [\r\n        {\r\n            \"main_task\": \"LogKar\",\r\n            \"sub_task\": [\r\n                {\r\n                    \"task_title\": \"Training\",\r\n                    \"task_detail\": [\r\n                        {\r\n                            \"started\": \"2022-07-06T11:00:12-00:00\",\r\n                            \"end\": \"2022-07-06T02:00:12-00:00\",\r\n                            \"about\": \"Redis\",\r\n                            \"status\": 1\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"task_title\": \"Coding\",\r\n                    \"task_detail\": [\r\n                        {\r\n                            \"started\": \"2022-07-06T11:00:12-00:00\",\r\n                            \"end\": \"2022-07-06T02:00:12-00:00\",\r\n                            \"about\": \"Rest API\",\r\n                            \"status\": 1\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n    \r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/redis/createTask?staffName=Leynardo",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "redis",
+                "createTask"
+              ],
+              "query": [
+                {
+                  "key": "staffName",
+                  "value": "Leynardo"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 Jul 2022 15:47:08 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "72"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": 200,\n    \"code\": 200,\n    \"accessTime\": \"05-07-2022 22:47:08\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "HGETALL User Task",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/redis/getTask/Leynardo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "redis",
+            "getTask",
+            "Leynardo"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Getting All User Task",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/redis/getTask/Leynardo",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "redis",
+                "getTask",
+                "Leynardo"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 Jul 2022 16:57:58 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "605"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"main_task\": \"LogKar\",\n            \"sub_task\": [\n                {\n                    \"task_title\": \"Training\",\n                    \"task_detail\": [\n                        {\n                            \"started\": \"2022-07-06T11:00:12Z\",\n                            \"end\": \"2022-07-06T02:00:12Z\",\n                            \"about\": \"Redis\",\n                            \"status\": \"Done\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"main_task\": \"Dancow\",\n            \"sub_task\": [\n                {\n                    \"task_title\": \"Milking\",\n                    \"task_detail\": [\n                        {\n                            \"started\": \"2022-07-06T11:00:12Z\",\n                            \"end\": \"2022-07-06T02:00:12Z\",\n                            \"about\": \"Milking Cow\",\n                            \"status\": \"Not Done\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"main_task\": \"Axios\",\n            \"sub_task\": [\n                {\n                    \"task_title\": \"Training\",\n                    \"task_detail\": [\n                        {\n                            \"started\": \"2022-07-06T11:00:12Z\",\n                            \"end\": \"2022-07-06T02:00:12Z\",\n                            \"about\": \"Redis Test\",\n                            \"status\": \"Done\"\n                        }\n                    ]\n                }\n            ]\n        }\n    ],\n    \"code\": 200,\n    \"accessTime\": \"05-07-2022 23:57:58\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "HGET Company Task For User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/redis/getCompanyTask/Leynardo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "redis",
+            "getCompanyTask",
+            "Leynardo"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Getting Company Task For User",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/redis/getCompanyTask/Leynardo?companyName=Dancow",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "redis",
+                "getCompanyTask",
+                "Leynardo"
+              ],
+              "query": [
+                {
+                  "key": "companyName",
+                  "value": "Dancow"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 Jul 2022 16:58:22 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "251"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"main_task\": \"Dancow\",\n        \"sub_task\": [\n            {\n                \"task_title\": \"Milking\",\n                \"task_detail\": [\n                    {\n                        \"started\": \"2022-07-06T11:00:12Z\",\n                        \"end\": \"2022-07-06T02:00:12Z\",\n                        \"about\": \"Milking Cow\",\n                        \"status\": \"Not Done\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"code\": 200,\n    \"accessTime\": \"05-07-2022 23:58:22\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "DEL All User Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/redis/deleteAllUserTask/Leynardo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "redis",
+            "deleteAllUserTask",
+            "Leynardo"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete All User Task From Given User",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/redis/deleteAllUserTask/Leynardo",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "redis",
+                "deleteAllUserTask",
+                "Leynardo"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 Jul 2022 16:05:38 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "72"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": 200,\n    \"code\": 200,\n    \"accessTime\": \"05-07-2022 23:05:38\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "HDEL Delete Choosen Company Task",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/redis/deleteAllUserTask/Leynardo",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "redis",
+            "deleteAllUserTask",
+            "Leynardo"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Delete Choosen Company From User",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/redis/deleteChoosenCompanyTaskFromUser/Leynardo?companyName=Dancow",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "redis",
+                "deleteChoosenCompanyTaskFromUser",
+                "Leynardo"
+              ],
+              "query": [
+                {
+                  "key": "companyName",
+                  "value": "Dancow"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 Jul 2022 16:20:22 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "72"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": 200,\n    \"code\": 200,\n    \"accessTime\": \"05-07-2022 23:20:22\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "SETTER REDIS",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"key\": \"LogKar\",\r\n    \"value\": \"Jaya Jaya Jaya\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/redis/?ttl_minutes=10",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "redis",
+            ""
+          ],
+          "query": [
+            {
+              "key": "ttl_minutes",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Executing Redis Setter",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"key\": \"LogKar\",\r\n    \"value\": \"Jaya Jaya Jaya\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/redis/",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "redis",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 Jul 2022 16:52:10 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "72"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": 200,\n    \"code\": 200,\n    \"accessTime\": \"05-07-2022 23:52:10\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "GETTER REDIS",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/redis/LogKar",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "redis",
+            "LogKar"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "GETTER REDIS",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/redis/LogKar",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "redis",
+                "LogKar"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 Jul 2022 16:55:00 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "110"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"key\": \"LogKar\",\n        \"value\": \"Jaya Jaya Jaya\"\n    },\n    \"code\": 200,\n    \"accessTime\": \"05-07-2022 23:55:00\"\n}"
+        }
+      ]
+    }
+  ]
+}
