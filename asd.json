@@ -1,0 +1,26 @@
+{
+  "staff_name": "Leynardo",
+  "main_task": "LogKar",
+  "sub_task": [
+    {
+      "task_title": "Training",
+      "task_detail": [
+        {
+          "started": "11 PM",
+          "end": "2 AM",
+          "about": "Kios Bank",
+          "status": 1
+        }
+      ]
+    },
+    {
+      "task_title": "Coding",
+      "task_detail": [
+        {
+          "module": "Update Cache",
+          "status": 1
+        }
+      ]
+    }
+  ]
+}
